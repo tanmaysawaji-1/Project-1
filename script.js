@@ -3,6 +3,9 @@ import ReactDOM from "react-dom/client"
 import Header from "./Header";
 import FoodOpetions from "./FoodOpetions";
 import GroceryOpetion from "./GroceryOpetion";
+import DineOption from "./DineOption";
+
+
 
 function App(){
     return (
@@ -10,6 +13,7 @@ function App(){
         <Header></Header>
         <FoodOpetions></FoodOpetions>
         <GroceryOpetion></GroceryOpetion>
+        <DineOption></DineOption>
         </>
     )
 }
