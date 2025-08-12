@@ -4,7 +4,7 @@ import Header from "./Header";
 import FoodOpetions from "./FoodOpetions";
 import GroceryOpetion from "./GroceryOpetion";
 import DineOption from "./DineOption";
-
+import Restaurant from "./Restaurant";
 
 
 function App(){
@@ -14,6 +14,7 @@ function App(){
         <FoodOpetions></FoodOpetions>
         <GroceryOpetion></GroceryOpetion>
         <DineOption></DineOption>
+        <Restaurant></Restaurant>
         </>
     )
 }
