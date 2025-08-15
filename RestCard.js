@@ -1,11 +1,11 @@
 export default function RestCard({data}){
     return (
         <>
-        <div>
+        <div className="max-w-[280px] mb-2 transform transition duration-200 hover:scale-95">
             <img className="w-70 h-45 object-cover rounded-xl" src={"https://media-assets.swiggy.com/swiggy/image/upload/"+data.info?.cloudinaryImageId}></img>
             <div className=" w-[95%] mx-auto mt-3">
             <div className="font-bold text-xl">{data?.info?.name}</div>
-            </div>
+           
             <div className="flex items-center gap-2">
 
             <svg
@@ -19,6 +19,8 @@ export default function RestCard({data}){
             <span className="text-lg">{data?.info?.avgRating}</span>
             <span className="text-lg font-semibold">{data?.info?.sla?.slaString}</span>
             </div>
+            <div className=" text-gray-600 text-lg mt-1 h-7 overflow-hidden">{data?.info?.cuisines.join(" ")}</div>
+             </div>
         </div>
         </>
     )
