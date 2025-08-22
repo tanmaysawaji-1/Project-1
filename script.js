@@ -13,7 +13,7 @@ function App(){
 
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/restaurant" element={<Restaurant></Restaurant>}></Route>
-        <Route path="/city/pune/:id" element={<Restaurantmenu></Restaurantmenu>}></Route>
+        <Route path="/restaurant/city/pune/:id" element={<Restaurantmenu></Restaurantmenu>}></Route>
 
         </Routes>
         </BrowserRouter>
