@@ -1,25 +1,23 @@
+import { useState } from "react";
+
 export default function Restinfo({resData}){
-    const price = resData?.variantsV2?.pricingModels?.[0]?.price
-    ? resData.variantsV2.pricingModels[0].price / 100
-    : "N/A";
+
     return(
         <>
-        <div className="flex w-full justify-between">
+        <div className="flex w-full justify-between mb-2 pb-2">
             <div className="w-[70%]">
-                <p>{resData?.name}</p>
-                <p>₹ {price}</p>
-                <span>{resData?.ratings?.aggregatedRating?.rating}</span>
-                <br></br>
-                <span>{resData?.ratings?.aggregatedRating?.ratingCountV2}</span>
+                <p className="text-2xl  font-semibold mb-1">{resData?.name}</p>
+                <p className="text-xl">{"₹" + (resData?.variantsV2?.pricingModels?.[0]?.price ? resData.variantsV2.pricingModels[0].price / 100:resData.price/100)}</p>
+                <span className="text-green-500">{resData?.ratings?.aggregatedRating?.rating ? resData?.ratings?.aggregatedRating?.rating : resData.ratings.aggregatedRating.rating}</span>
+                <span>({resData?.ratings?.aggregatedRating?.ratingCountV2 ? resData?.ratings?.aggregatedRating?.ratingCountV2:resData.ratings.aggregatedRating.ratingCountV2})</span>
                 <p>{resData?.description}</p>
-                <hr></hr>
             </div>
-            <div className="w-[20%] relative">
-                <img  className="w-full h-36 object-cover" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/"+resData?.imageId}></img>
-                <button className="absoulte bottom-0 left-0 text-green-700 px-4 py-2 bg-white">ADD</button>
-                <br></br>
+            <div className="w-[20%] h-36 relative ">
+                <img  className="w-full h-full object-cove rounded-3xl" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/"+resData?.imageId}></img>
+                <button className="absolute bottom-[-2px] right-3 shadow-md border border-white  rounded-xl text-xl text-green-700 px-6 py-2 bg-white">ADD</button>
             </div>
         </div>
+        <hr className="mb-6 mt-2"></hr>
         </>
     )
 
