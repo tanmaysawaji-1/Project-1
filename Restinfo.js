@@ -9,7 +9,10 @@ export default function Restinfo({resData}){
                 <p className="text-2xl  font-semibold mb-1">{resData?.name}</p>
                 <p className="text-xl">{"₹" + (resData?.variantsV2?.pricingModels?.[0]?.price ? resData.variantsV2.pricingModels[0].price / 100:resData.price/100)}</p>
                 <span className="text-green-500">{resData?.ratings?.aggregatedRating?.rating ? resData?.ratings?.aggregatedRating?.rating : resData.ratings.aggregatedRating.rating}</span>
-                <span>({resData?.ratings?.aggregatedRating?.ratingCountV2 ? resData?.ratings?.aggregatedRating?.ratingCountV2:resData.ratings.aggregatedRating.ratingCountV2})</span>
+               {resData?.ratings?.aggregatedRating?.ratingCountV2 && (
+               <span>({resData.ratings.aggregatedRating.ratingCountV2})</span>
+)}
+
                 <p>{resData?.description}</p>
             </div>
             <div className="w-[20%] h-36 relative ">
@@ -22,5 +25,6 @@ export default function Restinfo({resData}){
     )
 
 }
+// resData?.ratings?.aggregatedRating?.rating 
 // FOOD_CATALOG/IMAGES/CMS/2025/4/17/ef2f1053-c8e3-4072-aaa7-4539a67c8554_e8da5065-4d03-47d7-bad7-5413398a1564.jpg_compressed
 // "FOOD_CATALOG/IMAGES/CMS/2025/4/17/ee9985e4-828b-4a0e-b99b-656442e80877_7492ef8f-5b57-4ca4-86e6-4a8981c38510.jpg_compressed

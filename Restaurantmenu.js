@@ -6,8 +6,8 @@ import Menucard from "./Menucard";
 
 export default function Restaurantmenu(){
     let id = useParams();
-
-   const [Rdata, setdata] = useState([]);
+    const [selected, setselected] = useState(null);
+    const [Rdata, setdata] = useState([]);
 
    useEffect(()=>{
 
@@ -27,10 +27,17 @@ export default function Restaurantmenu(){
 // console.log(Rdata);
     return(
        <>
+       <div>
+
+        <div className="w-[80%] mx-auto mt-10 mb-10">
+            <button className={`text-2xl py-2 px-4 mr-4 border rounded-2xl ${selected==="veg"? "bg-green-600":"bg-gray-300"}`} onClick={()=>setselected(selected==='veg'?null:'veg')}>Veg</button>
+            <button className={`text-2xl py-2 px-4 border rounded-2xl ${selected==="nonveg"? "bg-red-600":"bg-gray-300"}`}  onClick={()=>setselected(selected==='nonveg'?null:'nonveg')}>NonVeg</button>
+         </div>
        <div className="w-[80%] mx-auto">
         {
-            Rdata.map((menuitems)=><Menucard key={menuitems?.card?.card?.title} menuitems={menuitems?.card?.card}></Menucard>)
+            Rdata.map((menuitems)=><Menucard key={menuitems?.card?.card?.title} menuitems={menuitems?.card?.card} foodselected={selected}></Menucard>)
         }
+       </div>
        </div>
        </> 
     )
