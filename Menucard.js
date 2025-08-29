@@ -14,7 +14,7 @@ export default function Menucard({menuitems,foodselected}){
                 <p className=" text-3xl font-bold mb-2">{menuitems.title}</p>
                 <div>
                 {
-                    menuitems?.categories?.map((items)=><Menucard key={items?.title} menuitems={items} foodselected></Menucard>)
+                    menuitems?.categories?.map((items)=><Menucard key={items?.title} menuitems={items} foodselected={foodselected}></Menucard>)
                 }
                 </div>
             </div>
@@ -26,7 +26,7 @@ export default function Menucard({menuitems,foodselected}){
                 <p className=" text-3xl font-bold mb-2">{menuitems?.card?.card?.title}</p>  
                 <div>
                 {
-                    menuitems?.card?.card?.itemCards?.map((items)=><Menucard key={items?.title} menuitems={items} foodselected></Menucard>)
+                    menuitems?.card?.card?.itemCards?.map((items)=><Menucard key={items?.title} menuitems={items} foodselected={foodselected}></Menucard>)
                 }
                 </div>
             </div>

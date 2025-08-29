@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router"
 import Menucard from "./Menucard";
-
+import { Link } from "react-router";
 
 
 export default function Restaurantmenu(){
@@ -28,6 +28,11 @@ export default function Restaurantmenu(){
     return(
        <>
        <div>
+        <div className="w-[80%] mx-auto mt-10 mb-10">
+            <Link to={`/restaurant/city/pune/${id.id}/search`}>
+            <p className="w-full text-center py-4 rounded-2xl  bg-gray-200 text-2xl">Search for Dishes</p>
+            </Link>
+        </div>
 
         <div className="w-[80%] mx-auto mt-10 mb-10">
             <button className={`text-2xl py-2 px-4 mr-4 border rounded-2xl ${selected==="veg"? "bg-green-600":"bg-gray-300"}`} onClick={()=>setselected(selected==='veg'?null:'veg')}>Veg</button>
