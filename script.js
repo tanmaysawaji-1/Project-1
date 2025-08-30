@@ -5,19 +5,25 @@ import Restaurant from "./Restaurant";
 import { BrowserRouter, Routes , Route } from "react-router";
 import Restaurantmenu from "./Restaurantmenu";
 import SearchFood from "./SearchFood";
+import Restheader from "./Restheader";
+import Secondaryhome from "./Secondaryhome";
 
 function App(){
     return (
         <>
         <BrowserRouter>
         < Routes>
-
         <Route path="/" element={<Home></Home>}></Route>
+
+        <Route element={<Secondaryhome></Secondaryhome>}>
         <Route path="/restaurant" element={<Restaurant></Restaurant>}></Route>
         <Route path="/restaurant/city/pune/:id" element={<Restaurantmenu></Restaurantmenu>}></Route>
         <Route path="/restaurant/city/pune/:id/search" element={<SearchFood></SearchFood>}></Route>
 
+        </Route>
+
         </Routes>
+
         </BrowserRouter>
 
         </>

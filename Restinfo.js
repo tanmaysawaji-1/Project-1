@@ -2,6 +2,8 @@ import { useState } from "react";
 
 export default function Restinfo({resData}){
 
+    const [count, setcount] = useState(0);
+
     return(
         <>
         <div className="flex w-full justify-between mb-2 pb-2">
@@ -17,7 +19,15 @@ export default function Restinfo({resData}){
             </div>
             <div className="w-[20%] h-36 relative ">
                 <img  className="w-full h-full object-cove rounded-3xl" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/"+resData?.imageId}></img>
-                <button className="absolute bottom-[-2px] right-3 shadow-md border border-white  rounded-xl text-xl text-green-700 px-6 py-2 bg-white">ADD</button>
+                {
+                    count===0?(<button className="absolute bottom-[-2px] right-3 shadow-md border border-white  rounded-xl text-xl text-green-700 px-6 py-2 bg-white" onClick={()=>setcount(1)}>ADD</button>):(
+                    <div className="absolute flex gap-3  bottom-[-2px] right-3 shadow-md border border-white  rounded-xl text-xl text-green-700 px-6 py-2 bg-white">
+                        <button onClick={()=>setcount(count-1)}>-</button>
+                        <span>{count}</span>
+                        <button onClick={()=>setcount(count+1)}>+</button>
+                    </div>
+                    )
+                }
             </div>
         </div>
         <hr className="mb-6 mt-2"></hr>
